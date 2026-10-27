@@ -1,0 +1,43 @@
+name: PinataUIExampleApp
+options:
+  bundleIdPrefix: com.pinata
+  deploymentTarget:
+    iOS: "16.0"
+# Company credentials and the default user email (not committed; copy Config.example.xcconfig).
+configFiles:
+  Debug: Config.xcconfig
+  Release: Config.xcconfig
+packages:
+  PinataUI:
+    url: https://github.com/pinata-ai/pinata-ui-swift
+    from: 0.1.0
+targets:
+  PinataUIExampleApp:
+    type: application
+    platform: iOS
+    sources: [PinataUIExampleApp]
+    dependencies:
+      - package: PinataUI
+    info:
+      path: PinataUIExampleApp/Info.plist
+      properties:
+        CFBundleDisplayName: Pinata UI example
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        PinataClientId: $(PINATA_CLIENT_ID)
+        PinataClientKey: $(PINATA_CLIENT_KEY)
+        PinataClientSecret: $(PINATA_CLIENT_SECRET)
+        PinataUserEmail: $(PINATA_USER_EMAIL)
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.pinata.uiswiftexample
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  PinataUIExampleApp:
+    build:
+      targets:
+        PinataUIExampleApp: all
+    run:
+      config: Debug

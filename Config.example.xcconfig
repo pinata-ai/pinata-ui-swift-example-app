@@ -1,0 +1,6 @@
+// Copy this file to Config.xcconfig (not committed) and fill in your sandbox values.
+// They only prefill the login form; you can also type them in the app.
+PINATA_CLIENT_ID = your_client_id
+PINATA_CLIENT_KEY = your_client_key
+PINATA_CLIENT_SECRET = your_client_secret
+PINATA_USER_EMAIL = your_email@example.com
