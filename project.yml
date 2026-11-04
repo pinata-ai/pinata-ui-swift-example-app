@@ -10,7 +10,7 @@ configFiles:
 packages:
   PinataUI:
     url: https://github.com/pinata-ai/pinata-ui-swift
-    from: 0.1.0
+    from: 0.1.1
 targets:
   PinataUIExampleApp:
     type: application
